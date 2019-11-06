@@ -2,5 +2,6 @@ import { TemplateRegistry } from "@govtechsg/decentralized-renderer-react-compon
 import { templates } from "./customTemplate";
 
 export const registry: TemplateRegistry<any> = {
-  default: templates
+  default: templates,
+  UAPL: templates
 };
