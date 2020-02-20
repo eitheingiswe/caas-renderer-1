@@ -33,42 +33,14 @@ const RatingGroupDetails = styled.div`
 `;
 
 const RatingName = styled.div`
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: 5px;
 `;
 
 const RatingHeading = styled.div`
-  font-size: 0.8em;
-  font-weight: 900;
+  font-size: 0.7em;
+  font-weight: 700;
   margin-bottom: 15px;
-`;
-
-const ButtonFlip = styled.button`
-  appearance: none;
-  outline: none;
-  border: 0;
-  padding: 0;
-  position: absolute;
-  top: calc(${constants.cardH} + 10px);
-  left: 50%;
-  width: 36px;
-  height: 36px;
-  margin-left: -18px;
-  border-radius: 50%;
-  background-color: ${constants.colorMaroon};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-const ButtonFlipIcon = styled.svg<{ isFlipped: boolean }>`
-  transition: transform 0.4s ${constants.easeInOutCubic};
-  transform: rotateZ(${({ isFlipped }) => (isFlipped ? "0deg" : "-180deg")});
 `;
 
 const LabelText = styled.div`
@@ -77,51 +49,133 @@ const LabelText = styled.div`
 
 const LabelValue = styled.div`
   font-size: 0.8em;
-  font-weight: 900;
+  font-weight: 700;
 `;
 
 const Profile = styled.div`
   ${flexColumnCenter}
-  height: 50%;
-  padding-left: 20px;
-  padding-right: 20px;
+  height: 47%;
+  background: url(${constants.bgMap}) center ;
+`;
+
+const LicenseName = styled.div`
+  display: flex;
+  padding: 0px 40px 0px 40px;
+  font-size: 0.7em;
+  text-align: center;
+  font-weight: 800;
+  color: ${constants.colorBlueDark};
 `;
 
 const ProfileContent = styled.div`
   display: flex;
+  margin-left: 55%;
+  margin-right: 20px;
+  margin-top: 5px;
 `;
 
-const ProfileAgency = styled.div`
-  ${flexColumnCenter}
-  flex: 1 1 0%;
-  padding: 20px;
-`;
-
+// const ProfileAgency = styled.div`
+//   ${flexColumnCenter}
+//   flex: 1 1 0%;
+//   padding: 20px;
+// `;
+//
 const ProfileShot = styled.div`
-  flex: 1 1 0%;
-  padding: 20px;
+  ${flexColumnCenter}
+  align-items: center;
   background-color: ${constants.colorWhite};
+  flex-shrink: 0;
+  height: 125px;
+  width: 100px;
+  overflow: hidden;
 `;
 
-const LicenseDetails = styled.div`
+// const ProfileShot = styled.div`
+//   flex: 1 1 0%;
+//   padding: 0px;
+//   background-color: ${constants.colorWhite};
+//  `;
+
+
+const LicenseDetails = styled.div`   
   ${flexColumnCenter}
-  height: 50%;
-  padding-left: 20px;
-  padding-right: 20px;
+  height: 53%;
   background-color: ${constants.colorBlueDark};
 `;
+
+const LicenseDetailContent = styled.div`
+  display: flex;
+  height: 100%;  
+`;
+
+const LicenseDetailsBar = styled.div`
+  background-color: ${constants.colorBlueDark2};
+  height: 100%;
+  width: 35px;
+  text-align: left;
+  padding: 20px 3px;
+`;
+
+const LabelValueBar = styled.div`
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 4px;
+  writing-mode: vertical-lr; 
+  transform: rotate(180deg);
+`;
+
+//text-transform: uppercase;
+//font-stretch: expanded;
+const LicenseDetailsText = styled.div`
+  flex: 1 1 0%;
+  background-color: ${constants.colorBlueDark};
+  padding: 20px;
+`;
+
+//top: calc(${constants.cardH} + 10px);
+//left: 50%;
+//margin-left: -18px;
+const ButtonFlip = styled.button`
+  appearance: none;
+  outline: none;
+  border: 0;
+  padding: 0;
+  top: calc(${constants.cardH} - 60px);
+  left: 80%;
+  position: absolute;  
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: ${constants.colorMaroon};
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	box-shadow: 2px 2px 4px #000;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+// const ButtonFlipIcon = styled.svg{ isFlipped: boolean }>`
+//   transition: transform 0.4s ${constants.easeInOutCubic};
+//   transform: rotateZ(${({ isFlipped }) => (isFlipped ? "0deg" : "-180deg")});
+// `;
 
 const LicenseInfo = styled.div`
   display: flex;
-  padding: 15px 20px;
-  font-size: 0.8em;
+  padding: 20px 20px;
+  font-size: 0.7em;
   text-align: center;
+  font-weight: 700;
+  color: ${constants.colorBlueDark};
 `;
-
+//  ${flexColumnCenter}
 const LicenseRatings = styled.div`
-  ${flexColumnCenter}
   padding: 15px 20px;
   background-color: ${constants.colorBlueDark};
+  min-height: 55%;
 `;
 
 const Scene = styled.div`
@@ -190,62 +244,78 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
       <FlipCard isFlipped={isFlipped}>
         <FlipCardFace isFront={true}>
           <Profile>
+            <LicenseName className="text-uppercase">
+              {document.name} (UAPL)
+            </LicenseName>
             <ProfileContent>
-              <ProfileAgency>
+              {/* <ProfileAgency>
                 <img className="img-fluid" src="https://www.caas.gov.sg/assets/caas/images/logo-caas-white.png" />
-              </ProfileAgency>
+              </ProfileAgency> */}
               <ProfileShot>
-                <img className="img-fluid" src={document.recipient.photo} />
+                <img style={{width: 125, height: 125}} src={document.recipient.photo} />
               </ProfileShot>
             </ProfileContent>
           </Profile>
           <LicenseDetails>
-            <FieldGroup isFront={true}>
-              <LabelText>License Number:</LabelText>
-              <LabelValue>{document.id}</LabelValue>
-            </FieldGroup>
-            <FieldGroup isFront={true}>
-              <LabelText>Name of Pilot:</LabelText>
-              <LabelValue>{document.recipient.name}</LabelValue>
-            </FieldGroup>
-            <FieldGroup isFront={true}>
-              <LabelText>Birth Date:</LabelText>
-              <LabelValue>{format(new Date(document.recipient.dob), "dd MMM yyyy")}</LabelValue>
-            </FieldGroup>
-            <FieldGroup isFront={true}>
-              <LabelText>Issue Date:</LabelText>
-              <LabelValue>{format(new Date(document.issuanceDate), "dd MMM yyyy")}</LabelValue>
-            </FieldGroup>
+            <LicenseDetailContent>
+              <LicenseDetailsBar>
+                <LabelValueBar>{document.id}</LabelValueBar>
+              </LicenseDetailsBar>
+              <LicenseDetailsText>
+                {/* <FieldGroup isFront={true}>
+                  <LabelText>License Number:</LabelText>
+                  <LabelValue>{document.id}</LabelValue>
+                </FieldGroup> */}
+                <FieldGroup isFront={true}>
+                  <LabelText>Name of Pilot:</LabelText>
+                  <LabelValue>{document.recipient.name}</LabelValue>
+                </FieldGroup>
+                <FieldGroup isFront={true}>
+                  <LabelText>Date of Birth:</LabelText>
+                  <LabelValue>{format(new Date(document.recipient.dob), "dd MMM yyyy")}</LabelValue>
+                </FieldGroup>
+                <FieldGroup isFront={true}>
+                  <LabelText>Date of Issue:</LabelText>
+                  <LabelValue>{format(new Date(document.issuanceDate), "dd MMM yyyy")}</LabelValue>
+                </FieldGroup>
+              </LicenseDetailsText>              
+              <ButtonFlip onClick={onClickFlipCard}>
+                <svg         
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 287 372" 
+                  width="24"
+                  height="24">
+                  <defs>
+                    <image width="274" height="364" id="img1" href={constants.phoneIcon}/>
+                  </defs>
+                  <use id="Layer 4" href="#img1" x="5" y="7"/>
+                </svg>
+              </ButtonFlip>
+            </LicenseDetailContent>            
           </LicenseDetails>
         </FlipCardFace>
         <FlipCardFace isFront={false}>
           <LicenseInfo>
-            THIS PILOT IS ENTITLED TO EXERCISE THE PRIVILEGES IN CONJUNCTION WITH THE RATINGS SHOWING BELOW:
+          THIS PILOT IS ENTITLED TO EXERCISE THE PRIVILEGES IN CONJUNCTION WITH THE CLASS, CATEGORY AND RATING SHOWN BELOW:
           </LicenseInfo>
           <LicenseRatings>
-            <RatingHeading>UNMANNED AIRCRAFT RATING</RatingHeading>
+            {/* <RatingHeading>UNMANNED AIRCRAFT RATING</RatingHeading> */}
             <Ratings ratings={document.ratings} />
           </LicenseRatings>
+          <ButtonFlip onClick={onClickFlipCard}>                
+            <svg
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 287 372" 
+              width="24"
+              height="24">
+              <defs>
+                <image width="274" height="364" id="img1" href={constants.phoneIcon}/>
+              </defs>
+              <use id="Layer 4" href="#img1" x="5" y="7"/>
+            </svg>
+          </ButtonFlip>
         </FlipCardFace>
       </FlipCard>
-      <ButtonFlip onClick={onClickFlipCard}>
-        <ButtonFlipIcon
-          isFlipped={isFlipped}
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          className="feather feather-arrow-left"
-        >
-          <line x1="19" y1="12" x2="5" y2="12" />
-          <polyline points="12 19 5 12 12 5" />
-        </ButtonFlipIcon>
-      </ButtonFlip>
     </Scene>
   );
 };
