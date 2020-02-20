@@ -60,10 +60,10 @@ const Profile = styled.div`
 
 const LicenseName = styled.div`
   display: flex;
-  padding: 10px 40px;
+  padding: 0px 40px 0px 40px;
   font-size: 0.7em;
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
   color: ${constants.colorBlueDark};
 `;
 
@@ -71,7 +71,7 @@ const ProfileContent = styled.div`
   display: flex;
   margin-left: 55%;
   margin-right: 20px;
-  margin-top: 0px;
+  margin-top: 5px;
 `;
 
 // const ProfileAgency = styled.div`
@@ -85,8 +85,8 @@ const ProfileShot = styled.div`
   align-items: center;
   background-color: ${constants.colorWhite};
   flex-shrink: 0;
-  height: 100px;
-  width: 80px;
+  height: 125px;
+  width: 100px;
   overflow: hidden;
 `;
 
@@ -109,23 +109,23 @@ const LicenseDetailContent = styled.div`
 `;
 
 const LicenseDetailsBar = styled.div`
-  ${flexColumnCenter}
   background-color: ${constants.colorBlueDark2};
   height: 100%;
   width: 35px;
   text-align: left;
-  padding-right: 5px;
+  padding: 20px 3px;
 `;
 
 const LabelValueBar = styled.div`
   font-size: 1em;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   writing-mode: vertical-lr; 
   transform: rotate(180deg);
 `;
-//text-transform: uppercase;
 
+//text-transform: uppercase;
+//font-stretch: expanded;
 const LicenseDetailsText = styled.div`
   flex: 1 1 0%;
   background-color: ${constants.colorBlueDark};
@@ -151,18 +151,17 @@ const ButtonFlip = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-	box-shadow: 2px 2px 4px #999;
+	box-shadow: 2px 2px 4px #000;
 
   &:focus {
     outline: none;
   }
 `;
 
-const ButtonFlipIcon = styled.svg<{ isFlipped: boolean }>`
-  transition: transform 0.4s ${constants.easeInOutCubic};
-  transform: rotateZ(${({ isFlipped }) => (isFlipped ? "0deg" : "-180deg")});
-`;
-
+// const ButtonFlipIcon = styled.svg{ isFlipped: boolean }>`
+//   transition: transform 0.4s ${constants.easeInOutCubic};
+//   transform: rotateZ(${({ isFlipped }) => (isFlipped ? "0deg" : "-180deg")});
+// `;
 
 const LicenseInfo = styled.div`
   display: flex;
@@ -253,7 +252,7 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
                 <img className="img-fluid" src="https://www.caas.gov.sg/assets/caas/images/logo-caas-white.png" />
               </ProfileAgency> */}
               <ProfileShot>
-                <img style={{width: 100, height: 100}} src={document.recipient.photo} />
+                <img style={{width: 125, height: 125}} src={document.recipient.photo} />
               </ProfileShot>
             </ProfileContent>
           </Profile>
@@ -272,33 +271,25 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
                   <LabelValue>{document.recipient.name}</LabelValue>
                 </FieldGroup>
                 <FieldGroup isFront={true}>
-                  <LabelText>Birth Date:</LabelText>
+                  <LabelText>Date of Birth:</LabelText>
                   <LabelValue>{format(new Date(document.recipient.dob), "dd MMM yyyy")}</LabelValue>
                 </FieldGroup>
                 <FieldGroup isFront={true}>
-                  <LabelText>Issue Date:</LabelText>
+                  <LabelText>Date of Issue:</LabelText>
                   <LabelValue>{format(new Date(document.issuanceDate), "dd MMM yyyy")}</LabelValue>
                 </FieldGroup>
               </LicenseDetailsText>              
               <ButtonFlip onClick={onClickFlipCard}>
-                <ButtonFlipIcon
-                  isFlipped={isFlipped}
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg         
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 287 372" 
                   width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  // background-image = url(../img/Clock-Play.png);
-                  background-size = "cover"
-                  className="feather feather-arrow-left"
-                >
-                  <line x1="19" y1="12" x2="5" y2="12" />
-                  <polyline points="12 19 5 12 12 5" />
-                </ButtonFlipIcon>
+                  height="24">
+                  <defs>
+                    <image width="274" height="364" id="img1" href={constants.phoneIcon}/>
+                  </defs>
+                  <use id="Layer 4" href="#img1" x="5" y="7"/>
+                </svg>
               </ButtonFlip>
             </LicenseDetailContent>            
           </LicenseDetails>
@@ -308,27 +299,21 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
           THIS PILOT IS ENTITLED TO EXERCISE THE PRIVILEGES IN CONJUNCTION WITH THE CLASS, CATEGORY AND RATING SHOWN BELOW:
           </LicenseInfo>
           <LicenseRatings>
-            <RatingHeading>UNMANNED AIRCRAFT RATING</RatingHeading>
+            {/* <RatingHeading>UNMANNED AIRCRAFT RATING</RatingHeading> */}
             <Ratings ratings={document.ratings} />
           </LicenseRatings>
-          <ButtonFlip onClick={onClickFlipCard}>
-                <ButtonFlipIcon
-                  isFlipped={isFlipped}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="feather feather-arrow-left"
-                >
-                  <line x1="19" y1="12" x2="5" y2="12" />
-                  <polyline points="12 19 5 12 12 5" />
-                </ButtonFlipIcon>
-              </ButtonFlip>
+          <ButtonFlip onClick={onClickFlipCard}>                
+            <svg
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 287 372" 
+              width="24"
+              height="24">
+              <defs>
+                <image width="274" height="364" id="img1" href={constants.phoneIcon}/>
+              </defs>
+              <use id="Layer 4" href="#img1" x="5" y="7"/>
+            </svg>
+          </ButtonFlip>
         </FlipCardFace>
       </FlipCard>
     </Scene>
