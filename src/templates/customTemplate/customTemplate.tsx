@@ -37,12 +37,6 @@ const RatingName = styled.div`
   margin-bottom: 5px;
 `;
 
-const RatingHeading = styled.div`
-  font-size: 0.7em;
-  font-weight: 700;
-  margin-bottom: 15px;
-`;
-
 const LabelText = styled.div`
   font-size: 0.6em;
 `;
@@ -74,12 +68,6 @@ const ProfileContent = styled.div`
   margin-top: 5px;
 `;
 
-// const ProfileAgency = styled.div`
-//   ${flexColumnCenter}
-//   flex: 1 1 0%;
-//   padding: 20px;
-// `;
-//
 const ProfileShot = styled.div`
   ${flexColumnCenter}
   align-items: center;
@@ -89,13 +77,6 @@ const ProfileShot = styled.div`
   width: 100px;
   overflow: hidden;
 `;
-
-// const ProfileShot = styled.div`
-//   flex: 1 1 0%;
-//   padding: 0px;
-//   background-color: ${constants.colorWhite};
-//  `;
-
 
 const LicenseDetails = styled.div`   
   ${flexColumnCenter}
@@ -124,17 +105,12 @@ const LabelValueBar = styled.div`
   transform: rotate(180deg);
 `;
 
-//text-transform: uppercase;
-//font-stretch: expanded;
 const LicenseDetailsText = styled.div`
   flex: 1 1 0%;
   background-color: ${constants.colorBlueDark};
   padding: 20px;
 `;
 
-//top: calc(${constants.cardH} + 10px);
-//left: 50%;
-//margin-left: -18px;
 const ButtonFlip = styled.button`
   appearance: none;
   outline: none;
@@ -158,11 +134,6 @@ const ButtonFlip = styled.button`
   }
 `;
 
-// const ButtonFlipIcon = styled.svg{ isFlipped: boolean }>`
-//   transition: transform 0.4s ${constants.easeInOutCubic};
-//   transform: rotateZ(${({ isFlipped }) => (isFlipped ? "0deg" : "-180deg")});
-// `;
-
 const LicenseInfo = styled.div`
   display: flex;
   padding: 20px 20px;
@@ -171,7 +142,7 @@ const LicenseInfo = styled.div`
   font-weight: 700;
   color: ${constants.colorBlueDark};
 `;
-//  ${flexColumnCenter}
+
 const LicenseRatings = styled.div`
   padding: 15px 20px;
   background-color: ${constants.colorBlueDark};
@@ -248,9 +219,6 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
               {document.name} (UAPL)
             </LicenseName>
             <ProfileContent>
-              {/* <ProfileAgency>
-                <img className="img-fluid" src="https://www.caas.gov.sg/assets/caas/images/logo-caas-white.png" />
-              </ProfileAgency> */}
               <ProfileShot>
                 <img style={{width: 125, height: 125}} src={document.recipient.photo} />
               </ProfileShot>
@@ -262,10 +230,6 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
                 <LabelValueBar>{document.id}</LabelValueBar>
               </LicenseDetailsBar>
               <LicenseDetailsText>
-                {/* <FieldGroup isFront={true}>
-                  <LabelText>License Number:</LabelText>
-                  <LabelValue>{document.id}</LabelValue>
-                </FieldGroup> */}
                 <FieldGroup isFront={true}>
                   <LabelText>Name of Pilot:</LabelText>
                   <LabelValue>{document.recipient.name}</LabelValue>
@@ -299,7 +263,6 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
           THIS PILOT IS ENTITLED TO EXERCISE THE PRIVILEGES IN CONJUNCTION WITH THE CLASS, CATEGORY AND RATING SHOWN BELOW:
           </LicenseInfo>
           <LicenseRatings>
-            {/* <RatingHeading>UNMANNED AIRCRAFT RATING</RatingHeading> */}
             <Ratings ratings={document.ratings} />
           </LicenseRatings>
           <ButtonFlip onClick={onClickFlipCard}>                
