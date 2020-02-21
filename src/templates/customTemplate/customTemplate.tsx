@@ -35,6 +35,7 @@ const RatingGroupDetails = styled.div`
 const RatingName = styled.div`
   font-weight: 700;
   margin-bottom: 5px;
+  width: 65%;
 `;
 
 const LabelText = styled.div`
@@ -186,8 +187,12 @@ interface RatingsProps {
 const Ratings: FunctionComponent<RatingsProps> = ({ ratings }: { ratings: Rating[] }) => {
   const rendererdRatings = ratings.map((rating, index) => (
     <RatingGroup key={index}>
-      <RatingName>{rating.name}</RatingName>
-      <LabelStatus expiryDate={new Date(rating.expiryDate)} />
+
+      <RatingGroupDetails>
+        <RatingName>{rating.name}</RatingName>      
+        <LabelStatus expiryDate={new Date(rating.expiryDate)}/>
+      </RatingGroupDetails> 
+
       <RatingGroupDetails>
         <FieldGroup isFront={false} style={{ flex: 2 }}>
           <div>Limitations:</div>
