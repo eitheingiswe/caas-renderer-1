@@ -13,6 +13,7 @@ export interface CustomTemplateCertificate extends Document {
   issuanceDate: string;
   recipient: {
     name: string;
+    email?: string;
     dob: string;
     photo: string;
   };
