@@ -2,7 +2,6 @@ import { Document } from "@govtechsg/decentralized-renderer-react-components";
 
 export interface Rating {
   name: string;
-  code: number | string;
   limitations?: string;
   expiryDate: string;
 }
@@ -38,13 +37,11 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
   ratings: [
     {
       name: "Class A (Aeroplane)",
-      code: "AC25",
       expiryDate: "2020-05-03T00:00:00.000Z",  
       limitations: "Limited to UA up to 7kg only"
     },
     {
       name: "Class A (Rotocraft)",
-      code: "AC25",
       expiryDate: "2023-09-21T00:00:00.000Z",
       limitations: "Limited to multi-rotor only" 
     }
