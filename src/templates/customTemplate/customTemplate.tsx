@@ -50,7 +50,7 @@ const LabelValue = styled.div`
 const Profile = styled.div`
   ${flexColumnCenter}
   height: 47%;
-  background: url(${constants.bgMap}) center ;
+  background: url(${constants.bgMap}) center;
 `;
 
 const LicenseName = styled.div`
@@ -79,7 +79,7 @@ const ProfileShot = styled.div`
   overflow: hidden;
 `;
 
-const LicenseDetails = styled.div`   
+const LicenseDetails = styled.div`
   ${flexColumnCenter}
   height: 53%;
   background-color: ${constants.colorBlueDark};
@@ -102,7 +102,7 @@ const LabelValueBar = styled.div`
   font-size: 1em;
   font-weight: 500;
   letter-spacing: 4px;
-  writing-mode: vertical-lr; 
+  writing-mode: vertical-lr;
   transform: rotate(180deg);
 `;
 
@@ -221,7 +221,7 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
         <FlipCardFace isFront={true}>
           <Profile>
             <LicenseName className="text-uppercase">
-              {document.name} (UAPL)
+              {document.name}
             </LicenseName>
             <ProfileContent>
               <ProfileShot>
