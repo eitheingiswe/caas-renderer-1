@@ -3,26 +3,28 @@ import styled from "@emotion/styled";
 import * as constants from "./constants";
 
 const LabelExpiring = styled.div`
-  font-size: 0.7em;
+  font-size: 0.8em;
   border-radius: 2px;
   padding: 3px 8px;
   display: inline-block;
   text-transform: uppercase;
   margin-bottom: 6px;
   letter-spacing: 0.02em;
-  font-weight: 900;
+  font-weight: 800;
+  color: #000;
   background-color: ${constants.colorYellow};
 `;
 
 const LabelExpired = styled.div`
-  font-size: 0.7em;
+  font-size: 0.8em;
   border-radius: 2px;
   padding: 2px 8px;
   display: inline-block;
   text-transform: uppercase;
   margin-bottom: 6px;
   letter-spacing: 0.02em;
-  font-weight: 900;
+  font-weight: 800;
+  color: #000;
   background-color: ${constants.colorMaroon};
 `;
 
