@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import styled from "@emotion/styled";
 import { CustomTemplateCertificate, Rating } from "../sample";
 import { LabelStatus } from "./LabelStatus";
+import { AFEStatus } from "./AFEStatus";
 import * as constants from "./constants";
 
 const flexColumnCenter = `
@@ -43,8 +44,8 @@ const LabelText = styled.div`
 `;
 
 const LabelValue = styled.div`
-  font-size: 0.8em;
-  font-weight: 700;
+  font-size: 0.7em;
+  font-weight: 600;
 `;
 
 const Profile = styled.div`
@@ -109,7 +110,7 @@ const LabelValueBar = styled.div`
 const LicenseDetailsText = styled.div`
   flex: 1 1 0%;
   background-color: ${constants.colorBlueDark};
-  padding: 20px;
+  padding: 10px;
 `;
 
 const ButtonFlip = styled.button`
@@ -189,7 +190,7 @@ const Ratings: FunctionComponent<RatingsProps> = ({ ratings }: { ratings: Rating
     <RatingGroup key={index}>
 
       <RatingGroupDetails>
-        <RatingName>{rating.name}</RatingName>      
+        <RatingName>{rating.name}<AFEStatus validDate={new Date(rating.AFEValidityStartDate)} expiryDate={new Date(rating.AFEexpiryDate)}/></RatingName>      
         <LabelStatus expiryDate={new Date(rating.expiryDate)}/>
       </RatingGroupDetails> 
 
@@ -214,7 +215,6 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
   const onClickFlipCard = () => {
     setFlip(!isFlipped);
   };
-
   return (
     <Scene>
       <FlipCard isFlipped={isFlipped} onClick={onClickFlipCard}>
@@ -225,7 +225,7 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
             </LicenseName>
             <ProfileContent>
               <ProfileShot>
-                <img style={{width: 125, height: 125}} src={document.recipient.photo} />
+                <img style={{width: 100, height: 128.5}} src={document.recipient.photo} />
               </ProfileShot>
             </ProfileContent>
           </Profile>
@@ -246,6 +246,10 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
                 <FieldGroup isFront={true}>
                   <LabelText>Date of Issue:</LabelText>
                   <LabelValue>{format(new Date(document.issuanceDate), "dd MMM yyyy")}</LabelValue>
+                </FieldGroup>
+                <FieldGroup isFront={true}>
+                  <LabelText>Issuing Authority:</LabelText>
+                  <LabelValue>Civil Aviation Authority of Singapore</LabelValue>
                 </FieldGroup>
               </LicenseDetailsText>              
               <ButtonFlip onClick={onClickFlipCard}>

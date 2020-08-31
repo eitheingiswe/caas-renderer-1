@@ -4,6 +4,8 @@ export interface Rating {
   name: string;
   limitations?: string;
   expiryDate: string;
+  AFEValidityStartDate: string;
+  AFEexpiryDate: string;
 }
 
 export interface CustomTemplateCertificate extends Document {
@@ -38,12 +40,16 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
     {
       name: "Class A (Aeroplane)",
       expiryDate: "2020-05-03T00:00:00.000Z",  
-      limitations: "Limited to UA up to 7kg only"
+      limitations: "Limited to UA up to 7kg only",
+      AFEValidityStartDate: "",
+      AFEexpiryDate: "",
     },
     {
       name: "Class A (Rotocraft)",
       expiryDate: "2023-09-21T00:00:00.000Z",
-      limitations: "Limited to multi-rotor only" 
+      limitations: "Limited to multi-rotor only",
+      AFEValidityStartDate: "2020-08-20T00:00:00.000Z",
+      AFEexpiryDate: "2021-09-30T00:00:00.000Z",
     }
   ]
 };
