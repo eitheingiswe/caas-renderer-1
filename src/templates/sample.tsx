@@ -39,7 +39,6 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
   ratings: [
     {
       name: "Class A (Aeroplane)",
-<<<<<<< HEAD
       expiryDate: "2020-05-03T00:00:00.000Z",  
       limitations: "Limited to UA up to 7kg only",
       AFEValidityStartDate: "",
@@ -51,10 +50,6 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
       limitations: "Limited to multi-rotor only",
       AFEValidityStartDate: "2020-08-20T00:00:00.000Z",
       AFEexpiryDate: "2021-09-30T00:00:00.000Z",
-=======
-      code: "AC25",
-      expiryDate: "2023-09-21T00:00:00.000Z"
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
     }
   ]
 };

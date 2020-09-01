@@ -36,16 +36,7 @@ const RatingGroupDetails = styled.div`
 const RatingName = styled.div`
   font-weight: 700;
   margin-bottom: 5px;
-<<<<<<< HEAD
   width: 65%;
-=======
-`;
-
-const RatingHeading = styled.div`
-  font-size: 0.7em;
-  font-weight: 700;
-  margin-bottom: 15px;
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
 `;
 
 const LabelText = styled.div`
@@ -53,23 +44,14 @@ const LabelText = styled.div`
 `;
 
 const LabelValue = styled.div`
-<<<<<<< HEAD
   font-size: 0.7em;
   font-weight: 600;
-=======
-  font-size: 0.8em;
-  font-weight: 700;
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
 `;
 
 const Profile = styled.div`
   ${flexColumnCenter}
   height: 47%;
-<<<<<<< HEAD
   background: url(${constants.bgMap}) center;
-=======
-  background: url(${constants.bgMap}) center ;
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
 `;
 
 const LicenseName = styled.div`
@@ -88,12 +70,6 @@ const ProfileContent = styled.div`
   margin-top: 5px;
 `;
 
-// const ProfileAgency = styled.div`
-//   ${flexColumnCenter}
-//   flex: 1 1 0%;
-//   padding: 20px;
-// `;
-//
 const ProfileShot = styled.div`
   ${flexColumnCenter}
   align-items: center;
@@ -104,78 +80,11 @@ const ProfileShot = styled.div`
   overflow: hidden;
 `;
 
-// const ProfileShot = styled.div`
-//   flex: 1 1 0%;
-//   padding: 0px;
-//   background-color: ${constants.colorWhite};
-//  `;
-
-
-const LicenseDetails = styled.div`   
+const LicenseDetails = styled.div`
   ${flexColumnCenter}
   height: 53%;
   background-color: ${constants.colorBlueDark};
 `;
-//
-const LicenseDetailContent = styled.div`
-  display: flex;
-  height: 100%;  
-`;
-
-const LicenseDetailsBar = styled.div`
-  background-color: ${constants.colorBlueDark2};
-  height: 100%;
-  width: 35px;
-  text-align: left;
-  padding: 20px 3px;
-`;
-
-const LabelValueBar = styled.div`
-  font-size: 1em;
-  font-weight: 500;
-  letter-spacing: 4px;
-  writing-mode: vertical-lr; 
-  transform: rotate(180deg);
-`;
-
-//text-transform: uppercase;
-//font-stretch: expanded;
-const LicenseDetailsText = styled.div`
-  flex: 1 1 0%;
-  background-color: ${constants.colorBlueDark};
-  padding: 20px;
-`;
-
-//top: calc(${constants.cardH} + 10px);
-//left: 50%;
-//margin-left: -18px;
-const ButtonFlip = styled.button`
-  appearance: none;
-  outline: none;
-  border: 0;
-  padding: 0;
-  top: calc(${constants.cardH} - 60px);
-  left: 80%;
-  position: absolute;  
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: ${constants.colorMaroon};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-	box-shadow: 2px 2px 4px #000;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-// const ButtonFlipIcon = styled.svg{ isFlipped: boolean }>`
-//   transition: transform 0.4s ${constants.easeInOutCubic};
-//   transform: rotateZ(${({ isFlipped }) => (isFlipped ? "0deg" : "-180deg")});
-// `;
 
 const LicenseDetailContent = styled.div`
   display: flex;
@@ -235,7 +144,7 @@ const LicenseInfo = styled.div`
   font-weight: 700;
   color: ${constants.colorBlueDark};
 `;
-//  ${flexColumnCenter}
+
 const LicenseRatings = styled.div`
   padding: 15px 20px;
   background-color: ${constants.colorBlueDark};
@@ -312,22 +221,11 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
         <FlipCardFace isFront={true}>
           <Profile>
             <LicenseName className="text-uppercase">
-<<<<<<< HEAD
               {document.name}
             </LicenseName>
             <ProfileContent>
               <ProfileShot>
                 <img style={{width: 100, height: 128.5}} src={document.recipient.photo} />
-=======
-              {document.name} (UAPL)
-            </LicenseName>
-            <ProfileContent>
-              {/* <ProfileAgency>
-                <img className="img-fluid" src="https://www.caas.gov.sg/assets/caas/images/logo-caas-white.png" />
-              </ProfileAgency> */}
-              <ProfileShot>
-                <img style={{width: 125, height: 125}} src={document.recipient.photo} />
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
               </ProfileShot>
             </ProfileContent>
           </Profile>
@@ -337,13 +235,6 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
                 <LabelValueBar>{document.id}</LabelValueBar>
               </LicenseDetailsBar>
               <LicenseDetailsText>
-<<<<<<< HEAD
-=======
-                {/* <FieldGroup isFront={true}>
-                  <LabelText>License Number:</LabelText>
-                  <LabelValue>{document.id}</LabelValue>
-                </FieldGroup> */}
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
                 <FieldGroup isFront={true}>
                   <LabelText>Name of Pilot:</LabelText>
                   <LabelValue>{document.recipient.name}</LabelValue>
@@ -356,13 +247,10 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
                   <LabelText>Date of Issue:</LabelText>
                   <LabelValue>{format(new Date(document.issuanceDate), "dd MMM yyyy")}</LabelValue>
                 </FieldGroup>
-<<<<<<< HEAD
                 <FieldGroup isFront={true}>
                   <LabelText>Issuing Authority:</LabelText>
                   <LabelValue>Civil Aviation Authority of Singapore</LabelValue>
                 </FieldGroup>
-=======
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
               </LicenseDetailsText>              
               <ButtonFlip onClick={onClickFlipCard}>
                 <svg         
@@ -384,10 +272,6 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
           THIS PILOT IS ENTITLED TO EXERCISE THE PRIVILEGES IN CONJUNCTION WITH THE CLASS, CATEGORY AND RATING SHOWN BELOW:
           </LicenseInfo>
           <LicenseRatings>
-<<<<<<< HEAD
-=======
-            {/* <RatingHeading>UNMANNED AIRCRAFT RATING</RatingHeading> */}
->>>>>>> 0180e537bc98e2487f77f224aa4fbca30ddcef34
             <Ratings ratings={document.ratings} />
           </LicenseRatings>
           <ButtonFlip onClick={onClickFlipCard}>                
