@@ -197,7 +197,7 @@ const Ratings: FunctionComponent<RatingsProps> = ({ ratings }: { ratings: Rating
       <RatingGroupDetails>
         <FieldGroup isFront={false} style={{ flex: 2 }}>
           <div>Limitations:</div>
-          <div>{rating.limitations || "NIL"}</div>
+          <div>{rating.limitations || "Nil"}</div>
         </FieldGroup>
         <FieldGroup isFront={false} style={{ flex: 1 }}>
           <div>Valid Till:</div>

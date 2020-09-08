@@ -25,7 +25,7 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
   $template: {
     name: "UALP",
     type: "EMBEDDED_RENDERER",
-    url: "https://demo-caas.openattestation.com"
+    url: "https://www.caasdomain.com"
   },
   id: "U0034577K",
   name: "Unmanned Aircraft Pilot Licence",
