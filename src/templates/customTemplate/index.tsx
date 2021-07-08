@@ -2,8 +2,8 @@ import { CustomTemplate } from "./customTemplate";
 
 export const templates = [
   {
-    id: "custom",
-    label: "Custom",
+    id: "uapl",
+    label: "UAPL",
     template: CustomTemplate
   }
 ];

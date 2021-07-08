@@ -36,16 +36,29 @@ export const AFEStatus: React.FunctionComponent<AFEStatusProps> = ({ validDate, 
   const expiryDateDay = expiryDate.getDay();
   const expiringDate = new Date(expiryDateYear, expiryDateMonth - 3, expiryDateDay);
 
-  if (today > validDate){
-    if (today > expiryDate) {
-      return null;
-    } else if (today > expiringDate) {
+  //check with start date
+  // if (today > validDate){
+  //   if (today > expiryDate) {
+  //     return null;
+  //   } else if (today > expiringDate) {
+  //     return <AFEExpiring>Authorised Flight Examiner</AFEExpiring>;
+  //   } else {
+  //     return <AFEValid>Authorised Flight Examiner</AFEValid>;
+  //   }
+  // }
+
+  //no valid start date
+  if (today < expiryDate) {
+    if (today > expiringDate) {
       return <AFEExpiring>Authorised Flight Examiner</AFEExpiring>;
-    } else {
+    }
+    else{
       return <AFEValid>Authorised Flight Examiner</AFEValid>;
     }
   }
+
   else{
     return null;
   }
 };
+

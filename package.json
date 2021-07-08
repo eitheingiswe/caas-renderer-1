@@ -11,12 +11,13 @@
     "@hot-loader/react-dom": "16.10.2",
     "date-fns": "^2.6.0",
     "debug": "4.1.1",
+    "expo": "^40.0.0",
     "react": "16.10.2",
     "react-dom": "16.10.2",
     "react-hot-loader": "4.12.15"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress --mode production",
+    "build": "webpack --progress --mode production",
     "dev": "NODE_ENV=development webpack-dev-server",
     "lint": "eslint . --ext .ts,.tsx,.mdx --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
