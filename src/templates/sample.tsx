@@ -45,6 +45,20 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
       AFEexpiryDate: "",
     },
     {
+      "name": "Class A (Aeroplane)",
+      "expiryDate": "2021-08-03T00:00:00.000Z",
+      "limitations": "Limited to UA up to 7kg only",
+      "AFEValidityStartDate": "",
+      "AFEexpiryDate": ""
+    },
+    {
+      "name": "Class A (Aeroplane)",
+      "expiryDate": "2025-05-03T00:00:00.000Z",
+      "limitations": "Limited to UA up to 7kg only",
+      "AFEValidityStartDate": "",
+      "AFEexpiryDate": ""
+    },
+    {
       name: "Class A (Rotocraft)",
       expiryDate: "2023-09-21T00:00:00.000Z",
       limitations: "Limited to multi-rotor only",

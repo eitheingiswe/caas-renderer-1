@@ -19,11 +19,10 @@ const FieldGroup = styled.div<{ isFront: boolean }>`
   padding-left: ${({ isFront }) => (isFront ? "15px" : "5px")};
   margin-bottom: ${({ isFront }) => (isFront ? "10px" : "5px")};
 `;
-
 const RatingGroup = styled.div`
   font-size: 0.6em;
   margin-bottom: 10px;
-
+  
   &:last-child {
     margin-bottom: 0;
   }
@@ -149,6 +148,8 @@ const LicenseRatings = styled.div`
   padding: 15px 20px;
   background-color: ${constants.colorBlueDark};
   min-height: 55%;
+  max-height: 60%;
+  overflow: auto;
 `;
 
 const Scene = styled.div`
@@ -169,7 +170,7 @@ const FlipCard = styled.div<{ isFlipped: boolean }>`
   color: ${constants.colorWhite};
   cursor: pointer;
 `;
-
+ // height: ${({ isFront }) => (isFront ? "80%" : "100%")};
 const FlipCardFace = styled.div<{ isFront: boolean }>`
   transform: rotateY(${({ isFront }) => (isFront ? "0deg" : "-180deg")});
   backface-visibility: hidden;
