@@ -147,8 +147,7 @@ const LicenseInfo = styled.div`
 const LicenseRatings = styled.div`
   padding: 15px 20px;
   background-color: ${constants.colorBlueDark};
-  min-height: 55%;
-  max-height: 60%;
+  height: 55%;
   overflow: auto;
 `;
 
